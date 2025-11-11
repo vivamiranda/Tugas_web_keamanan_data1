@@ -1,7 +1,7 @@
 <?php
 // 1. Sertakan koneksi dan mulai sesi
-session_start(); // Pastikan session_start() ada jika belum ada di koneksi.php
-include 'koneksi.php';
+// 🛠️ PERBAIKAN INCLUDE PATH: Menunjuk ke folder /includes/
+include 'includes/koneksi.php';
 
 // 2. Variabel untuk pesan
 $message = '';
@@ -160,7 +160,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </main>
 
-    <?php if (isset($_SESSION['user_id'])) include 'modal_profile.php'; ?>
+    <?php 
+    // 🛠️ PERBAIKAN INCLUDE MODAL PATH: Menunjuk ke folder /includes/
+    if (isset($_SESSION['user_id'])) include 'includes/modal_profile.php'; 
+    ?>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
